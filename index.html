@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Albatross - Golf Pools & Analytics</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0D1117;
+      color: #E6EDF3;
+      min-height: 100vh;
+    }
+    .hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 24px 60px;
+      text-align: center;
+    }
+    .logo {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #0D5C2F 0%, #1B8A4A 100%);
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+    .tagline {
+      font-size: 20px;
+      color: #8B949E;
+      margin-bottom: 40px;
+    }
+    .badge {
+      display: inline-block;
+      margin-bottom: 48px;
+    }
+    .badge img {
+      height: 54px;
+    }
+    .features {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 540px) {
+      .features { grid-template-columns: 1fr; }
+      h1 { font-size: 36px; }
+    }
+    .feature {
+      background: #161B22;
+      border-radius: 12px;
+      padding: 28px;
+      text-align: left;
+    }
+    .feature-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .feature h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #E6EDF3;
+    }
+    .feature p {
+      font-size: 14px;
+      color: #8B949E;
+      line-height: 1.5;
+    }
+    .pricing {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+      text-align: center;
+    }
+    .pricing h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .pricing .sub {
+      color: #8B949E;
+      margin-bottom: 32px;
+      font-size: 15px;
+    }
+    .price-cards {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .price-card {
+      background: #161B22;
+      border-radius: 12px;
+      padding: 24px 32px;
+      min-width: 180px;
+      flex: 1;
+      max-width: 220px;
+    }
+    .price-card .amount {
+      font-size: 28px;
+      font-weight: 700;
+      color: #D4A843;
+    }
+    .price-card .period {
+      font-size: 14px;
+      color: #8B949E;
+      margin-bottom: 8px;
+    }
+    .price-card .desc {
+      font-size: 13px;
+      color: #8B949E;
+    }
+    .support {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      text-align: center;
+    }
+    .support h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .support p {
+      color: #8B949E;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .support a {
+      color: #58A6FF;
+      text-decoration: none;
+    }
+    .support a:hover {
+      text-decoration: underline;
+    }
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: #21262D;
+      margin: 0 auto 40px;
+    }
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #484F58;
+      font-size: 13px;
+      border-top: 1px solid #21262D;
+    }
+    footer a {
+      color: #8B949E;
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="logo">A</div>
+    <h1>Albatross</h1>
+    <p class="tagline">Golf Pools & Analytics</p>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">&#9971;</div>
+      <h3>Tiered Pick Sheets</h3>
+      <p>Create pools for any PGA tournament. Pick your players across tiers and compete with friends.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128202;</div>
+      <h3>Real Analytics</h3>
+      <p>Strokes Gained breakdowns, course-fit projections, and win probability models for every player.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128176;</div>
+      <h3>Live Odds</h3>
+      <p>Betting odds from 40+ bookmakers including DraftKings, FanDuel, and Bet365.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#127942;</div>
+      <h3>Live Leaderboards</h3>
+      <p>Watch scores update in real-time during tournaments. See who's winning your pool.</p>
+    </div>
+  </div>
+
+  <div class="pricing">
+    <h2>Simple Pricing</h2>
+    <p class="sub">Commissioner pays to create. Members always join free.</p>
+    <div class="price-cards">
+      <div class="price-card">
+        <div class="amount">$4.99</div>
+        <div class="period">per pool</div>
+        <div class="desc">One-time purchase</div>
+      </div>
+      <div class="price-card">
+        <div class="amount">$9.99</div>
+        <div class="period">per month</div>
+        <div class="desc">Unlimited pools</div>
+      </div>
+      <div class="price-card">
+        <div class="amount">$99.99</div>
+        <div class="period">per year</div>
+        <div class="desc">Save 17%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="support" id="support">
+    <div class="divider"></div>
+    <h2>Support</h2>
+    <p>Need help with Albatross? Have feedback or feature requests?</p>
+    <p>Email us at <a href="mailto:Harrisondesimone@live.com">Harrisondesimone@live.com</a></p>
+    <p style="margin-top: 24px;">
+      <a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms of Service</a>
+    </p>
+  </div>
+
+  <footer>
+    &copy; 2026 Harrison DeSimone. All rights reserved.
+  </footer>
+</body>
+</html>
