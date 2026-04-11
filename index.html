@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Albatross - Golf Pools & Analytics</title>
+  <title>Albatross — Fantasy Golf for Friend Groups</title>
+  <meta name="description" content="Create private golf pools with friends. Pick players, track live scores, and compete with deep analytics. Not DFS. Not betting. Just friends playing fantasy golf.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0D1117;
-      color: #E6EDF3;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #0A0F0D;
+      color: #B8C4BC;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
+
+    /* Hero */
     .hero {
       max-width: 720px;
       margin: 0 auto;
@@ -21,65 +27,125 @@
     .logo {
       width: 80px;
       height: 80px;
-      background: linear-gradient(135deg, #0D5C2F 0%, #1B8A4A 100%);
-      border-radius: 18px;
+      background: linear-gradient(135deg, #0D5C2F 0%, #1A7A42 100%);
+      border-radius: 20px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 40px;
-      margin-bottom: 24px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 36px;
+      font-weight: 800;
+      color: #F5F5F0;
+      margin-bottom: 28px;
     }
     h1 {
+      font-family: 'Manrope', sans-serif;
       font-size: 48px;
       font-weight: 800;
+      color: #F5F5F0;
       letter-spacing: -1px;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
     .tagline {
       font-size: 20px;
-      color: #8B949E;
-      margin-bottom: 40px;
+      color: #7A8A80;
+      margin-bottom: 16px;
+      font-weight: 500;
     }
-    .badge {
-      display: inline-block;
-      margin-bottom: 48px;
+    .sub-tagline {
+      font-size: 15px;
+      color: #7A8A80;
+      max-width: 480px;
+      margin: 0 auto 48px;
+      line-height: 1.6;
     }
-    .badge img {
-      height: 54px;
-    }
+
+    /* Features */
     .features {
       max-width: 720px;
       margin: 0 auto;
       padding: 0 24px 60px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    @media (max-width: 540px) {
-      .features { grid-template-columns: 1fr; }
-      h1 { font-size: 36px; }
+      gap: 20px;
     }
     .feature {
-      background: #161B22;
-      border-radius: 12px;
+      background: #111916;
+      border-radius: 16px;
       padding: 28px;
       text-align: left;
     }
     .feature-icon {
       font-size: 28px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .feature h3 {
+      font-family: 'Manrope', sans-serif;
       font-size: 17px;
-      font-weight: 600;
+      font-weight: 700;
+      color: #F5F5F0;
       margin-bottom: 8px;
-      color: #E6EDF3;
     }
     .feature p {
       font-size: 14px;
-      color: #8B949E;
+      color: #7A8A80;
+      line-height: 1.6;
+    }
+
+    /* Game Modes */
+    .modes {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+    }
+    .modes h2 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #F5F5F0;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .modes .sub {
+      color: #7A8A80;
+      text-align: center;
+      margin-bottom: 32px;
+      font-size: 15px;
+    }
+    .mode-cards {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .mode-card {
+      background: #111916;
+      border-radius: 16px;
+      padding: 24px;
+      flex: 1;
+      min-width: 200px;
+    }
+    .mode-card h3 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #F5F5F0;
+      margin-bottom: 6px;
+    }
+    .mode-card .mode-tag {
+      font-size: 11px;
+      font-weight: 600;
+      color: #0D5C2F;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    .mode-card p {
+      font-size: 13px;
+      color: #7A8A80;
       line-height: 1.5;
     }
+
+    /* Pricing */
     .pricing {
       max-width: 720px;
       margin: 0 auto;
@@ -87,12 +153,14 @@
       text-align: center;
     }
     .pricing h2 {
+      font-family: 'Manrope', sans-serif;
       font-size: 28px;
       font-weight: 700;
+      color: #F5F5F0;
       margin-bottom: 8px;
     }
     .pricing .sub {
-      color: #8B949E;
+      color: #7A8A80;
       margin-bottom: 32px;
       font-size: 15px;
     }
@@ -103,98 +171,148 @@
       flex-wrap: wrap;
     }
     .price-card {
-      background: #161B22;
-      border-radius: 12px;
-      padding: 24px 32px;
+      background: #111916;
+      border-radius: 16px;
+      padding: 24px 28px;
       min-width: 180px;
       flex: 1;
       max-width: 220px;
     }
     .price-card .amount {
+      font-family: 'Manrope', sans-serif;
       font-size: 28px;
       font-weight: 700;
       color: #D4A843;
     }
     .price-card .period {
       font-size: 14px;
-      color: #8B949E;
+      color: #7A8A80;
       margin-bottom: 8px;
     }
     .price-card .desc {
       font-size: 13px;
-      color: #8B949E;
+      color: #7A8A80;
     }
+    .pricing-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #7A8A80;
+    }
+
+    /* Support */
     .support {
       max-width: 720px;
       margin: 0 auto;
-      padding: 40px 24px 80px;
+      padding: 40px 24px 48px;
       text-align: center;
     }
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: #182420;
+      margin: 0 auto 40px;
+    }
     .support h2 {
+      font-family: 'Manrope', sans-serif;
       font-size: 24px;
       font-weight: 700;
+      color: #F5F5F0;
       margin-bottom: 16px;
     }
     .support p {
-      color: #8B949E;
+      color: #7A8A80;
       font-size: 15px;
       line-height: 1.6;
       margin-bottom: 12px;
     }
     .support a {
-      color: #58A6FF;
+      color: #6BB88C;
       text-decoration: none;
     }
-    .support a:hover {
-      text-decoration: underline;
-    }
-    .divider {
-      width: 60px;
-      height: 2px;
-      background: #21262D;
-      margin: 0 auto 40px;
-    }
+    .support a:hover { text-decoration: underline; }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 24px;
-      color: #484F58;
+      color: #7A8A80;
       font-size: 13px;
-      border-top: 1px solid #21262D;
+      border-top: 1px solid rgba(255,255,255,0.06);
     }
     footer a {
-      color: #8B949E;
+      color: #7A8A80;
       text-decoration: none;
+      margin: 0 8px;
     }
-    footer a:hover { text-decoration: underline; }
+    footer a:hover { color: #6BB88C; text-decoration: underline; }
+    .footer-links {
+      margin-bottom: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 540px) {
+      .features { grid-template-columns: 1fr; }
+      .mode-cards { flex-direction: column; }
+      h1 { font-size: 36px; }
+      .hero { padding: 60px 24px 48px; }
+    }
   </style>
 </head>
 <body>
+
   <div class="hero">
     <div class="logo">A</div>
     <h1>Albatross</h1>
-    <p class="tagline">Golf Pools & Analytics</p>
+    <p class="tagline">Fantasy Golf for Friend Groups</p>
+    <p class="sub-tagline">
+      Create private pools, pick your players, and compete against your
+      friends with the deepest golf analytics anywhere. Not DFS. Not betting.
+      Just friends playing fantasy golf.
+    </p>
   </div>
 
   <div class="features">
     <div class="feature">
       <div class="feature-icon">&#9971;</div>
-      <h3>Tiered Pick Sheets</h3>
-      <p>Create pools for any PGA tournament. Pick your players across tiers and compete with friends.</p>
+      <h3>Private Pools</h3>
+      <p>Invite your group with a code. Commissioner sets the rules. Everyone picks and competes — the way golf pools should be.</p>
     </div>
     <div class="feature">
       <div class="feature-icon">&#128202;</div>
-      <h3>Real Analytics</h3>
-      <p>Strokes Gained breakdowns, course-fit projections, and win probability models for every player.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">&#128176;</div>
-      <h3>Live Odds</h3>
-      <p>Betting odds from 40+ bookmakers including DraftKings, FanDuel, and Bet365.</p>
+      <h3>Deep Analytics</h3>
+      <p>Strokes Gained breakdowns, course-fit models, win probabilities, and AI analysis. The Research tab is your edge.</p>
     </div>
     <div class="feature">
       <div class="feature-icon">&#127942;</div>
-      <h3>Live Leaderboards</h3>
-      <p>Watch scores update in real-time during tournaments. See who's winning your pool.</p>
+      <h3>Live Scoring</h3>
+      <p>Real-time leaderboards during tournaments. Watch your picks climb (or crash) hole by hole.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128176;</div>
+      <h3>Odds & Insights</h3>
+      <p>Betting odds from 40+ bookmakers displayed for research. Make smarter picks, not bets.</p>
+    </div>
+  </div>
+
+  <div class="modes">
+    <h2>Three Game Modes</h2>
+    <p class="sub">Each one designed for friend groups, not mass-market contests.</p>
+    <div class="mode-cards">
+      <div class="mode-card">
+        <p class="mode-tag">Single Tournament</p>
+        <h3>Tiered Pick</h3>
+        <p>Pick one player per tier. Tiers set by world rankings. Simple, strategic, and the most popular format.</p>
+      </div>
+      <div class="mode-card">
+        <p class="mode-tag">Single Tournament</p>
+        <h3>Salary Cap</h3>
+        <p>Build a roster under a budget. Salaries based on projections and odds. Classic fantasy format.</p>
+      </div>
+      <div class="mode-card">
+        <p class="mode-tag">Season-Long</p>
+        <h3>One and Done</h3>
+        <p>Pick one player per tournament — can't reuse them. Cumulative scoring or survivor elimination. Strategy over months.</p>
+      </div>
     </div>
   </div>
 
@@ -218,20 +336,29 @@
         <div class="desc">Save 17%</div>
       </div>
     </div>
+    <p class="pricing-note">
+      Subscriptions auto-renew unless cancelled at least 24 hours before the
+      end of the billing period. Manage subscriptions in Settings &rarr;
+      Apple ID &rarr; Subscriptions.
+    </p>
   </div>
 
   <div class="support" id="support">
     <div class="divider"></div>
     <h2>Support</h2>
     <p>Need help with Albatross? Have feedback or feature requests?</p>
-    <p>Email us at <a href="mailto:Harrisondesimone@live.com">Harrisondesimone@live.com</a></p>
-    <p style="margin-top: 24px;">
-      <a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms of Service</a>
-    </p>
+    <p>Email us at <a href="mailto:support@albatross.app">support@albatross.app</a></p>
   </div>
 
   <footer>
-    &copy; 2026 Harrison DeSimone. All rights reserved.
+    <div class="footer-links">
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="eula.html">EULA</a>
+      <a href="age-suitability.html">Age Suitability</a>
+    </div>
+    &copy; 2026 Albatross LLC. All rights reserved.
   </footer>
+
 </body>
 </html>
