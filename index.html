@@ -4,361 +4,442 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Albatross — Fantasy Golf for Friend Groups</title>
-  <meta name="description" content="Create private golf pools with friends. Pick players, track live scores, and compete with deep analytics. Not DFS. Not betting. Just friends playing fantasy golf.">
+  <meta name="description" content="Create private golf pools with friends. Three game modes, real-time analytics, live scoring. Not DFS. Not betting. Just golf with your people.">
+  <meta property="og:title" content="Albatross — Fantasy Golf for Friend Groups">
+  <meta property="og:description" content="Private golf pools with real analytics. Tiered Pick, Salary Cap, and One and Done game modes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://albatross-pools.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #0A0F0D;
-      color: #B8C4BC;
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Hero */
-    .hero {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 80px 24px 60px;
-      text-align: center;
-    }
-    .logo {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, #0D5C2F 0%, #1A7A42 100%);
-      border-radius: 20px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Manrope', sans-serif;
-      font-size: 36px;
-      font-weight: 800;
-      color: #F5F5F0;
-      margin-bottom: 28px;
-    }
-    h1 {
-      font-family: 'Manrope', sans-serif;
-      font-size: 48px;
-      font-weight: 800;
-      color: #F5F5F0;
-      letter-spacing: -1px;
-      margin-bottom: 12px;
-    }
-    .tagline {
-      font-size: 20px;
-      color: #7A8A80;
-      margin-bottom: 16px;
-      font-weight: 500;
-    }
-    .sub-tagline {
-      font-size: 15px;
-      color: #7A8A80;
-      max-width: 480px;
-      margin: 0 auto 48px;
-      line-height: 1.6;
-    }
-
-    /* Features */
-    .features {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 24px 60px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .feature {
-      background: #111916;
-      border-radius: 16px;
-      padding: 28px;
-      text-align: left;
-    }
-    .feature-icon {
-      font-size: 28px;
-      margin-bottom: 14px;
-    }
-    .feature h3 {
-      font-family: 'Manrope', sans-serif;
-      font-size: 17px;
-      font-weight: 700;
-      color: #F5F5F0;
-      margin-bottom: 8px;
-    }
-    .feature p {
-      font-size: 14px;
-      color: #7A8A80;
-      line-height: 1.6;
-    }
-
-    /* Game Modes */
-    .modes {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 24px 60px;
-    }
-    .modes h2 {
-      font-family: 'Manrope', sans-serif;
-      font-size: 28px;
-      font-weight: 700;
-      color: #F5F5F0;
-      text-align: center;
-      margin-bottom: 8px;
-    }
-    .modes .sub {
-      color: #7A8A80;
-      text-align: center;
-      margin-bottom: 32px;
-      font-size: 15px;
-    }
-    .mode-cards {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .mode-card {
-      background: #111916;
-      border-radius: 16px;
-      padding: 24px;
-      flex: 1;
-      min-width: 200px;
-    }
-    .mode-card h3 {
-      font-family: 'Manrope', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: #F5F5F0;
-      margin-bottom: 6px;
-    }
-    .mode-card .mode-tag {
-      font-size: 11px;
-      font-weight: 600;
-      color: #0D5C2F;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 10px;
-    }
-    .mode-card p {
-      font-size: 13px;
-      color: #7A8A80;
-      line-height: 1.5;
-    }
-
-    /* Pricing */
-    .pricing {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 24px 60px;
-      text-align: center;
-    }
-    .pricing h2 {
-      font-family: 'Manrope', sans-serif;
-      font-size: 28px;
-      font-weight: 700;
-      color: #F5F5F0;
-      margin-bottom: 8px;
-    }
-    .pricing .sub {
-      color: #7A8A80;
-      margin-bottom: 32px;
-      font-size: 15px;
-    }
-    .price-cards {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .price-card {
-      background: #111916;
-      border-radius: 16px;
-      padding: 24px 28px;
-      min-width: 180px;
-      flex: 1;
-      max-width: 220px;
-    }
-    .price-card .amount {
-      font-family: 'Manrope', sans-serif;
-      font-size: 28px;
-      font-weight: 700;
-      color: #D4A843;
-    }
-    .price-card .period {
-      font-size: 14px;
-      color: #7A8A80;
-      margin-bottom: 8px;
-    }
-    .price-card .desc {
-      font-size: 13px;
-      color: #7A8A80;
-    }
-    .pricing-note {
-      margin-top: 20px;
-      font-size: 13px;
-      color: #7A8A80;
-    }
-
-    /* Support */
-    .support {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 40px 24px 48px;
-      text-align: center;
-    }
-    .divider {
-      width: 60px;
-      height: 2px;
-      background: #182420;
-      margin: 0 auto 40px;
-    }
-    .support h2 {
-      font-family: 'Manrope', sans-serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: #F5F5F0;
-      margin-bottom: 16px;
-    }
-    .support p {
-      color: #7A8A80;
-      font-size: 15px;
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-    .support a {
-      color: #6BB88C;
-      text-decoration: none;
-    }
-    .support a:hover { text-decoration: underline; }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 24px;
-      color: #7A8A80;
-      font-size: 13px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-    footer a {
-      color: #7A8A80;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-    footer a:hover { color: #6BB88C; text-decoration: underline; }
-    .footer-links {
-      margin-bottom: 12px;
-    }
-
-    /* Responsive */
-    @media (max-width: 540px) {
-      .features { grid-template-columns: 1fr; }
-      .mode-cards { flex-direction: column; }
-      h1 { font-size: 36px; }
-      .hero { padding: 60px 24px 48px; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <div class="hero">
-    <div class="logo">A</div>
-    <h1>Albatross</h1>
-    <p class="tagline">Fantasy Golf for Friend Groups</p>
-    <p class="sub-tagline">
-      Create private pools, pick your players, and compete against your
-      friends with the deepest golf analytics anywhere. Not DFS. Not betting.
-      Just friends playing fantasy golf.
+  <!-- ============ Navigation ============ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">A</div>
+        Albatross
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#game-modes">Game Modes</a></li>
+        <li><a href="#research">Analytics</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#" class="nav-cta">Coming Soon</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- ============ Hero ============ -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Coming to the App Store
+    </div>
+    <h1>Fantasy golf,<br>built for <span class="highlight">friend groups</span></h1>
+    <p class="hero-sub">
+      Create private pools for any PGA tournament. Pick players, track live scores, and compete with the people you actually know. Powered by real analytics — not guesswork.
     </p>
-  </div>
+    <div class="hero-cta-group">
+      <a href="#game-modes" class="btn-primary">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+        Explore Game Modes
+      </a>
+      <a href="#research" class="btn-secondary">
+        See the Analytics
+      </a>
+    </div>
 
-  <div class="features">
-    <div class="feature">
-      <div class="feature-icon">&#9971;</div>
-      <h3>Private Pools</h3>
-      <p>Invite your group with a code. Commissioner sets the rules. Everyone picks and competes — the way golf pools should be.</p>
+    <!-- Phone Mockup -->
+    <div class="phone-mockup">
+      <div class="phone-mockup-notch"></div>
+      <div class="phone-mockup-inner">
+        <div class="phone-placeholder-icon">A</div>
+        <div class="phone-placeholder-text">App screenshot<br>coming soon</div>
+      </div>
     </div>
-    <div class="feature">
-      <div class="feature-icon">&#128202;</div>
-      <h3>Deep Analytics</h3>
-      <p>Strokes Gained breakdowns, course-fit models, win probabilities, and AI analysis. The Research tab is your edge.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">&#127942;</div>
-      <h3>Live Scoring</h3>
-      <p>Real-time leaderboards during tournaments. Watch your picks climb (or crash) hole by hole.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">&#128176;</div>
-      <h3>Odds & Insights</h3>
-      <p>Betting odds from 40+ bookmakers displayed for research. Make smarter picks, not bets.</p>
-    </div>
-  </div>
+  </section>
 
-  <div class="modes">
-    <h2>Three Game Modes</h2>
-    <p class="sub">Each one designed for friend groups, not mass-market contests.</p>
-    <div class="mode-cards">
-      <div class="mode-card">
-        <p class="mode-tag">Single Tournament</p>
-        <h3>Tiered Pick</h3>
-        <p>Pick one player per tier. Tiers set by world rankings. Simple, strategic, and the most popular format.</p>
-      </div>
-      <div class="mode-card">
-        <p class="mode-tag">Single Tournament</p>
-        <h3>Salary Cap</h3>
-        <p>Build a roster under a budget. Salaries based on projections and odds. Classic fantasy format.</p>
-      </div>
-      <div class="mode-card">
-        <p class="mode-tag">Season-Long</p>
-        <h3>One and Done</h3>
-        <p>Pick one player per tournament — can't reuse them. Cumulative scoring or survivor elimination. Strategy over months.</p>
+  <!-- ============ How It Works ============ -->
+  <section class="section text-center" id="how-it-works">
+    <div class="container">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Up and running in under two minutes</h2>
+      <p class="section-sub centered">No complex setup. No league drafts. Just create a pool, send a code, and start picking.</p>
+
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Create a Pool</h3>
+          <p>Choose your game mode, set the rules, and customize the tournament. You're the commissioner.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Invite Friends</h3>
+          <p>Share a 6-character invite code. Your friends join for free — only the commissioner pays.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Make Your Picks</h3>
+          <p>Use real analytics, live odds, and strokes gained data to build your lineup before the deadline.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Compete Live</h3>
+          <p>Watch your pool leaderboard update in real time as the tournament unfolds. Talk trash in chat.</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="pricing">
-    <h2>Simple Pricing</h2>
-    <p class="sub">Commissioner pays to create. Members always join free.</p>
-    <div class="price-cards">
-      <div class="price-card">
-        <div class="amount">$4.99</div>
-        <div class="period">per pool</div>
-        <div class="desc">One-time purchase</div>
-      </div>
-      <div class="price-card">
-        <div class="amount">$9.99</div>
-        <div class="period">per month</div>
-        <div class="desc">Unlimited pools</div>
-      </div>
-      <div class="price-card">
-        <div class="amount">$99.99</div>
-        <div class="period">per year</div>
-        <div class="desc">Save 17%</div>
+  <!-- ============ Game Modes ============ -->
+  <section class="section text-center" id="game-modes">
+    <div class="container">
+      <div class="section-label">Game Modes</div>
+      <h2 class="section-title">Three ways to play. All built for groups.</h2>
+      <p class="section-sub centered">Every mode is designed for private pools of 5 to 100 people. Single-tournament sprints or season-long campaigns — your call.</p>
+
+      <div class="modes-grid">
+        <!-- Tiered Pick -->
+        <div class="mode-card">
+          <div class="mode-icon tiered">&#9971;</div>
+          <h3>Tiered Pick</h3>
+          <p class="mode-desc">Players are ranked into tiers using DataGolf Rankings in 10-rank increments. Pick one player per tier. The core Albatross experience.</p>
+          <ul class="mode-details">
+            <li>Tiers based on real DataGolf rankings (T1 = ranks 1-10, T2 = 11-20, etc.)</li>
+            <li>One pick per tier — build a balanced roster across the field</li>
+            <li>Single-tournament format, 4-day lifecycle</li>
+            <li>Commissioner controls number of tiers and scoring rules</li>
+            <li>Picks lock at tournament start — no mid-round changes</li>
+          </ul>
+        </div>
+
+        <!-- Salary Cap -->
+        <div class="mode-card">
+          <div class="mode-icon salary">&#128176;</div>
+          <h3>Salary Cap</h3>
+          <p class="mode-desc">Build the best roster under a fixed budget. Player salaries are generated from DataGolf projections and live odds data.</p>
+          <ul class="mode-details">
+            <li>Salary values derived from real projections and betting odds</li>
+            <li>Fixed budget — spend it wisely across your roster</li>
+            <li>Single-tournament format with flexible roster sizes</li>
+            <li>Commissioner sets budget amount and roster constraints</li>
+            <li>Strategy: balance stars and sleepers within your cap</li>
+          </ul>
+        </div>
+
+        <!-- One and Done -->
+        <div class="mode-card">
+          <div class="mode-icon oad">&#127942;</div>
+          <h3>One and Done</h3>
+          <p class="mode-desc">Season-long endurance mode. Pick one player per tournament — once you use them, they're locked for the rest of the season.</p>
+          <ul class="mode-details">
+            <li>Scoring = real PGA Tour prize money earned (USD)</li>
+            <li>Two variants: Cumulative (total earnings) or Survivor (elimination)</li>
+            <li>Survivor rules: missed cut, worst score, or bottom N — commissioner decides</li>
+            <li>Configurable tournament selection (Majors Only, FedEx Cup, Full Season, Custom)</li>
+            <li>Season archive and renewal for multi-year leagues</li>
+          </ul>
+        </div>
       </div>
     </div>
-    <p class="pricing-note">
-      Subscriptions auto-renew unless cancelled at least 24 hours before the
-      end of the billing period. Manage subscriptions in Settings &rarr;
-      Apple ID &rarr; Subscriptions.
-    </p>
-  </div>
+  </section>
 
-  <div class="support" id="support">
-    <div class="divider"></div>
-    <h2>Support</h2>
-    <p>Need help with Albatross? Have feedback or feature requests?</p>
-    <p>Email us at <a href="mailto:support@albatross.app">support@albatross.app</a></p>
-  </div>
+  <!-- ============ Research / Analytics ============ -->
+  <section class="section" id="research">
+    <div class="container">
+      <div class="research-grid">
+        <div class="research-content">
+          <div class="section-label">The Research Tab</div>
+          <h2 class="section-title">The analytics your group is missing</h2>
+          <p class="section-sub">Most fantasy golf apps give you a pick sheet and a leaderboard. Albatross gives you the data to actually make smart picks — strokes gained breakdowns, course-fit analysis, and real predictive models from DataGolf.</p>
 
-  <footer>
-    <div class="footer-links">
-      <a href="terms.html">Terms of Service</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="eula.html">EULA</a>
-      <a href="age-suitability.html">Age Suitability</a>
+          <div class="research-features">
+            <div class="research-feature">
+              <div class="research-feature-icon">&#128200;</div>
+              <div>
+                <h4>Strokes Gained Breakdowns</h4>
+                <p>SG: Off the Tee, Approach, Around the Green, Putting — for every player in the field, sourced from DataGolf's archive.</p>
+              </div>
+            </div>
+            <div class="research-feature">
+              <div class="research-feature-icon">&#127969;</div>
+              <div>
+                <h4>Course-Fit Projections</h4>
+                <p>How well does a player's skillset match the course this week? Course history, grass type, layout profile — it all factors in.</p>
+              </div>
+            </div>
+            <div class="research-feature">
+              <div class="research-feature-icon">&#127919;</div>
+              <div>
+                <h4>Win Probability Models</h4>
+                <p>DataGolf's predictive models show each player's probability to win, finish top 5, top 10, top 20, and make the cut.</p>
+              </div>
+            </div>
+            <div class="research-feature">
+              <div class="research-feature-icon">&#128178;</div>
+              <div>
+                <h4>Live Odds from 40+ Books</h4>
+                <p>Outright, top 5, top 10, and matchup odds from DraftKings, FanDuel, Bet365, and more — for informational research only.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics Mockup -->
+        <div class="analytics-card">
+          <div style="font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 24px;">Player Analytics Preview</div>
+          <div class="stat-row">
+            <span class="stat-label">SG: Total</span>
+            <span class="stat-value positive">+2.14</span>
+          </div>
+          <div class="stat-bar"><div class="stat-bar-fill" style="width: 78%;"></div></div>
+          <div class="stat-row">
+            <span class="stat-label">SG: Approach</span>
+            <span class="stat-value positive">+1.03</span>
+          </div>
+          <div class="stat-bar"><div class="stat-bar-fill" style="width: 65%;"></div></div>
+          <div class="stat-row">
+            <span class="stat-label">SG: Off the Tee</span>
+            <span class="stat-value positive">+0.72</span>
+          </div>
+          <div class="stat-bar"><div class="stat-bar-fill" style="width: 54%;"></div></div>
+          <div class="stat-row">
+            <span class="stat-label">SG: Putting</span>
+            <span class="stat-value positive">+0.31</span>
+          </div>
+          <div class="stat-bar"><div class="stat-bar-fill" style="width: 38%;"></div></div>
+          <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--surface-2);">
+            <div class="stat-row">
+              <span class="stat-label">Course Fit Score</span>
+              <span class="stat-value gold">87 / 100</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Win Probability</span>
+              <span class="stat-value">8.3%</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Top 10 Probability</span>
+              <span class="stat-value">31.2%</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Best Odds (Win)</span>
+              <span class="stat-value gold">+1200</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    &copy; 2026 Albatross LLC. All rights reserved.
+  </section>
+
+  <!-- ============ Live Scoring ============ -->
+  <section class="section text-center" id="live-scoring">
+    <div class="container">
+      <div class="section-label">Live Scoring</div>
+      <h2 class="section-title">Real-time leaderboards. Every shot matters.</h2>
+      <p class="section-sub centered">Scores update automatically during tournament play. See exactly where your picks stand, hole by hole, round by round. Your pool leaderboard recalculates live.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 64px; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <div class="step">
+          <div style="font-size: 32px; margin-bottom: 16px;">&#128225;</div>
+          <h3>Push Notifications</h3>
+          <p>Get alerts for pick deadlines, score updates, leaderboard changes, and pool invitations.</p>
+        </div>
+        <div class="step">
+          <div style="font-size: 32px; margin-bottom: 16px;">&#128172;</div>
+          <h3>Pool Chat</h3>
+          <p>Built-in group chat for every pool. Send messages, GIFs, and talk trash in real time.</p>
+        </div>
+        <div class="step">
+          <div style="font-size: 32px; margin-bottom: 16px;">&#128202;</div>
+          <h3>Full Scorecards</h3>
+          <p>Tap any player to see their hole-by-hole scorecard, round scores, and tournament position.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Pricing ============ -->
+  <section class="section text-center" id="pricing">
+    <div class="container">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">One person pays. Everyone else plays free.</h2>
+      <p class="section-sub centered">The commissioner pays to create a pool. Every member joins for free — no hidden costs, no ads, no data selling. Just golf.</p>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-amount">$4.99</div>
+          <div class="price-period">per pool</div>
+          <p class="price-desc">Perfect for a single tournament with your group.</p>
+          <ul class="price-features">
+            <li>Create one pool</li>
+            <li>Any game mode</li>
+            <li>Unlimited members</li>
+            <li>Full analytics access</li>
+            <li>Live scoring</li>
+          </ul>
+        </div>
+
+        <div class="price-card featured">
+          <div class="price-amount">$9.99</div>
+          <div class="price-period">per month</div>
+          <p class="price-desc">For the commissioner who runs pools every week.</p>
+          <ul class="price-features">
+            <li>Unlimited pool creation</li>
+            <li>All three game modes</li>
+            <li>Unlimited members</li>
+            <li>Full analytics access</li>
+            <li>Live scoring + chat</li>
+            <li>Priority support</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <div class="price-amount">$99.99</div>
+          <div class="price-period">per year</div>
+          <p class="price-desc">Best value — save over $19 vs. monthly.</p>
+          <ul class="price-features">
+            <li>Everything in Monthly</li>
+            <li>Season-long One and Done</li>
+            <li>Pool history + archives</li>
+            <li>Full analytics access</li>
+            <li>Two months free</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="price-note">All purchases are processed through the App Store. Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current billing period. Manage subscriptions in Settings &rarr; Apple ID &rarr; Subscriptions.</p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section text-center" id="faq">
+    <div class="container">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Questions? We've got answers.</h2>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Is Albatross a gambling app?</h3>
+          <p>No. Albatross is a social fantasy golf app for private friend groups. No real money is wagered through the app. The commissioner pays a flat fee to create a pool, and members join for free. Any prize arrangements between friends happen privately outside the app — Albatross doesn't process, facilitate, or take a cut of any winnings.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is this the same as DraftKings or FanDuel?</h3>
+          <p>No. Albatross is not a daily fantasy sports (DFS) platform. There are no mass-market contests, no entry fees with variable payouts, no house edge, and no pari-mutuel mechanics. It's designed for groups of people who know each other — friends, coworkers, golf buddies.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Why do you show betting odds?</h3>
+          <p>Odds from 40+ bookmakers are displayed in the Research tab as an analytical tool. They help you evaluate player value and compare market sentiment to statistical models. You cannot place bets through Albatross. Odds data is purely for research and informational purposes.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How many people can be in a pool?</h3>
+          <p>Pools support anywhere from 5 to 100 members. Most pools run with 8-20 people — a golf trip group, an office league, or a friend group chat. The commissioner controls who joins via a private invite code.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Who pays? Do all members pay?</h3>
+          <p>Only the commissioner (pool creator) pays — either $4.99 per pool or a monthly/annual subscription for unlimited pools. Every member joins completely free. No ads, no upsells, no "premium tiers" that gate basic features for members.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Where does the data come from?</h3>
+          <p>Player statistics and predictive models come from DataGolf, one of the most respected analytics providers in golf. Live leaderboards and scorecards come from RapidAPI Live Golf Data. Betting odds come from The Odds API, aggregating 40+ bookmakers.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What tournaments can I create pools for?</h3>
+          <p>Any PGA Tour event on the 2026 schedule. For One and Done season-long mode, you can select from presets like Majors Only, FedEx Cup events, Full PGA Tour Season, or hand-pick specific tournaments with the Custom option.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is there an Android version?</h3>
+          <p>Albatross is launching on iOS first. The app is built with React Native, so an Android version is technically possible and something we're considering for the future based on demand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA Banner ============ -->
+  <section class="cta-banner">
+    <h2>Ready to run your group's next pool?</h2>
+    <p>Albatross is coming soon to the App Store. Private golf pools with the analytics your group has been missing.</p>
+    <a href="mailto:harrisondesimone@gmail.com" class="btn-primary">
+      Get in Touch
+    </a>
+  </section>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">A</div>
+        <span class="footer-copy">&copy; 2026 Harrison DeSimone. All rights reserved.</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="eula.html">EULA</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="age-suitability.html">Age Suitability</a></li>
+        <li><a href="mailto:harrisondesimone@gmail.com">Contact</a></li>
+      </ul>
+    </div>
   </footer>
+
+  <!-- ============ Scripts ============ -->
+  <script>
+    // Sticky nav background on scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const isOpen = links.style.display === 'flex';
+      links.style.display = isOpen ? 'none' : 'flex';
+      if (!isOpen) {
+        links.style.flexDirection = 'column';
+        links.style.position = 'absolute';
+        links.style.top = '72px';
+        links.style.left = '0';
+        links.style.right = '0';
+        links.style.background = 'rgba(10,15,13,0.95)';
+        links.style.backdropFilter = 'blur(20px)';
+        links.style.padding = '24px 32px';
+        links.style.gap = '16px';
+        links.style.borderBottom = '1px solid rgba(255,255,255,0.06)';
+      }
+    });
+
+    // Close mobile nav on link click
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+          links.style.display = 'none';
+        }
+      });
+    });
+
+    // Smooth reveal on scroll (intersection observer)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.section, .cta-banner').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(24px)';
+      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(section);
+    });
+  </script>
 
 </body>
 </html>

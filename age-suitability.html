@@ -4,61 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Age Suitability — Albatross</title>
+  <meta name="description" content="Age suitability and content rating documentation for Albatross.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #0A0F0D;
-      color: #B8C4BC;
-      line-height: 1.7;
-      padding: 0 24px 80px;
-      max-width: 720px;
-      margin: 0 auto;
-      -webkit-font-smoothing: antialiased;
-    }
-    header {
-      padding: 48px 0 32px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      margin-bottom: 40px;
-    }
-    .brand {
-      font-family: 'Manrope', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      color: #0D5C2F;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 8px;
-    }
-    h1 {
-      font-family: 'Manrope', sans-serif;
-      font-size: 32px;
-      font-weight: 800;
-      color: #F5F5F0;
-      margin-bottom: 8px;
-    }
-    .updated {
-      font-size: 13px;
-      color: #7A8A80;
-    }
-    h2 {
-      font-family: 'Manrope', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: #F5F5F0;
-      margin-top: 40px;
-      margin-bottom: 12px;
-    }
-    p { margin-bottom: 16px; font-size: 15px; }
-    strong { color: #F5F5F0; font-weight: 600; }
-    a { color: #6BB88C; text-decoration: none; }
-    a:hover { text-decoration: underline; }
     .callout {
-      background-color: rgba(13, 92, 47, 0.08);
+      background-color: rgba(13, 92, 47, 0.12);
       border-left: 3px solid #0D5C2F;
-      padding: 16px 20px;
+      padding: 18px 22px;
       margin: 24px 0;
       border-radius: 0 8px 8px 0;
     }
@@ -67,153 +22,185 @@
     .check-item {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 12px;
+      gap: 12px;
+      margin-bottom: 14px;
       font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
     }
     .check-icon {
-      color: #0D5C2F;
+      color: var(--green-light);
       font-weight: 700;
       flex-shrink: 0;
       margin-top: 2px;
-    }
-    nav.legal-nav {
-      display: flex;
-      gap: 24px;
-      padding: 20px 0;
-      margin-top: 48px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      font-size: 13px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand">Albatross</div>
-    <h1>Age Suitability</h1>
-    <p class="updated">Last updated: April 2026</p>
-  </header>
 
-  <h2>What Is Albatross?</h2>
-  <p>Albatross is a fantasy golf app for friend groups. Users create private pools, pick professional golfers for real PGA Tour and LIV Golf tournaments, and compete against their friends based on actual player performance. The app provides deep golf analytics — strokes gained breakdowns, course-fit analysis, historical data — to help users make informed picks.</p>
-
-  <div class="callout">
-    <p>Albatross is <strong>not</strong> a sportsbook, daily fantasy sports (DFS) platform, or gambling app. It is a social fantasy game played among private friend groups with invite-only pools.</p>
-  </div>
-
-  <h2>Age Requirement: 18+</h2>
-  <p>Albatross requires all users to be at least 18 years of age. This restriction exists because:</p>
-  <div class="check-list">
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span>The app involves skill-based fantasy contests where friend groups may privately arrange entry contributions and prizes among themselves</span>
+  <!-- Navigation -->
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">A</div>
+        Albatross
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#game-modes">Game Modes</a></li>
+        <li><a href="index.html#research">Analytics</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu">&#9776;</button>
     </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span>The app displays betting odds from licensed bookmakers as informational reference data to help users evaluate player picks</span>
-    </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span>The app processes in-app purchases (pool creation fees and subscriptions) that require a valid Apple ID with a payment method</span>
-    </div>
-  </div>
-
-  <h2>How Age Eligibility Is Enforced</h2>
-  <p>Albatross enforces the 18+ age requirement through the following measures:</p>
-  <div class="check-list">
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span><strong>Terms of Service Agreement:</strong> Users must accept the Terms of Service to use the app. Section 3 (Eligibility) requires users to represent that they are at least 18 years old and of legal age in their jurisdiction.</span>
-    </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span><strong>Apple ID Requirement:</strong> Account creation and in-app purchases require a valid Apple ID. Apple's own account age restrictions provide an additional layer of age verification.</span>
-    </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span><strong>App Store Age Rating:</strong> The app's age rating in the App Store is set to 17+, ensuring that Apple's parental control features (Screen Time, Family Sharing restrictions) prevent minors from downloading the app when parental controls are enabled on the device.</span>
-    </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span><strong>Private Pool Model:</strong> Pools are invite-only among known participants. There are no public lobbies, open matchmaking, or anonymous contests — users must be invited by someone they know.</span>
-    </div>
-  </div>
-
-  <h2>Content Suitability</h2>
-  <p>Albatross does not contain:</p>
-  <div class="check-list">
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span>No violent, sexual, or graphic content of any kind</span>
-    </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span>No user-generated images or video — only text-based chat within private pools</span>
-    </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span>No advertising or third-party marketing content</span>
-    </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span>No real-money wagering, house-edge mechanics, or pari-mutuel betting</span>
-    </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span>No simulated casino games, slot machines, or randomized loot mechanics</span>
-    </div>
-  </div>
-  <p>The app's content consists entirely of: professional golf tournament data (schedules, leaderboards, player statistics), analytical tools (strokes gained, course fit, win probability models), private pool management features, and in-pool text chat.</p>
-
-  <h2>Parental Controls</h2>
-  <p>Albatross does not include built-in parental controls because it is designed exclusively for adult users (18+). However, the app respects and is fully compatible with Apple's built-in device-level parental controls:</p>
-  <div class="check-list">
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span><strong>Screen Time:</strong> Parents can restrict app downloads by age rating. With a 17+ rating, Albatross will be blocked on devices where Screen Time restricts apps to a lower age rating.</span>
-    </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span><strong>Family Sharing:</strong> The Family Sharing organizer can enable "Ask to Buy" for children under 18, requiring parental approval before any app download or in-app purchase.</span>
-    </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span><strong>Content &amp; Privacy Restrictions:</strong> Parents can disable in-app purchases entirely through iOS content restrictions.</span>
-    </div>
-  </div>
-
-  <h2>Why Albatross Is Not Gambling</h2>
-  <p>Albatross is a fantasy sports application, not a gambling or wagering app. Key distinctions:</p>
-  <div class="check-list">
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span><strong>Skill-based contests:</strong> Success requires knowledge of golf, player statistics, course analysis, and strategic decision-making — not chance</span>
-    </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span><strong>No house edge:</strong> Albatross does not take a percentage of winnings or operate a book. Revenue comes from pool creation fees and subscriptions</span>
-    </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span><strong>Private pools only:</strong> All contests are among known friends, not anonymous mass-market competitions</span>
-    </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span><strong>No odds-based wagering:</strong> While the app displays odds as informational data, users cannot place bets or wagers through the app</span>
-    </div>
-    <div class="check-item">
-      <span class="check-icon">&#10003;</span>
-      <span><strong>Fixed entry structure:</strong> Pool entry terms are set by the commissioner before the pool begins — there are no variable stakes, progressive bets, or in-play wagering</span>
-    </div>
-  </div>
-
-  <h2>Contact</h2>
-  <p>Questions about age suitability or content? Contact us at <a href="mailto:support@albatross.app">support@albatross.app</a></p>
-
-  <nav class="legal-nav">
-    <a href="terms.html">Terms of Service</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="eula.html">EULA</a>
   </nav>
+
+  <!-- Content -->
+  <div class="legal-page">
+    <a href="index.html" class="back-link">&larr; Back to Albatross</a>
+    <h1>Age Suitability</h1>
+    <span class="updated">Last updated: April 2026</span>
+
+    <h2>What Is Albatross?</h2>
+    <p>Albatross is a fantasy golf app for friend groups. Users create private pools, pick professional golfers for real PGA Tour tournaments, and compete against their friends based on actual player performance. The app provides deep golf analytics — strokes gained breakdowns, course-fit analysis, historical data, and predictive models — to help users make informed picks.</p>
+
+    <div class="callout">
+      <p>Albatross is <strong>not</strong> a sportsbook, daily fantasy sports (DFS) platform, or gambling app. It is a social fantasy game played among private friend groups with invite-only pools.</p>
+    </div>
+
+    <h2>Age Requirement: 18+</h2>
+    <p>Albatross requires all users to be at least 18 years of age. This restriction exists because:</p>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span>The app involves skill-based fantasy contests where friend groups may privately arrange entry contributions and prizes among themselves.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span>The app displays betting odds from licensed bookmakers as informational reference data to help users evaluate player picks.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span>The app processes in-app purchases (pool creation fees and subscriptions) that require a valid Apple ID with a payment method.</span>
+      </div>
+    </div>
+
+    <h2>How Age Eligibility Is Enforced</h2>
+    <p>Albatross enforces the 18+ age requirement through the following measures:</p>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span><strong>Terms of Service Agreement:</strong> Users must accept the Terms of Service to use the app. Section 4 (Eligibility) requires users to represent that they are at least 18 years old and of legal age in their jurisdiction.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span><strong>Apple ID Requirement:</strong> Account creation and in-app purchases require a valid Apple ID. Apple's own account age restrictions provide an additional layer of age verification.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span><strong>App Store Age Rating:</strong> The app's age rating in the App Store is set to 17+, ensuring that Apple's parental control features (Screen Time, Family Sharing restrictions) prevent minors from downloading the app when parental controls are enabled on the device.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span><strong>Private Pool Model:</strong> Pools are invite-only among known participants. There are no public lobbies, open matchmaking, or anonymous contests — users must be invited by someone they know.</span>
+      </div>
+    </div>
+
+    <h2>Content Suitability</h2>
+    <p>Albatross does not contain:</p>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span>No violent, sexual, or graphic content of any kind.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span>No user-generated images or video — only text-based chat and GIFs within private pools.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span>No advertising or third-party marketing content.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span>No real-money wagering, house-edge mechanics, or pari-mutuel betting.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span>No simulated casino games, slot machines, or randomized loot mechanics.</span>
+      </div>
+    </div>
+    <p>The app's content consists entirely of: professional golf tournament data (schedules, leaderboards, player statistics), analytical tools (strokes gained, course fit, win probability models), private pool management features, and in-pool text chat.</p>
+
+    <h2>Parental Controls</h2>
+    <p>Albatross does not include built-in parental controls because it is designed exclusively for adult users (18+). However, the app respects and is fully compatible with Apple's built-in device-level parental controls:</p>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span><strong>Screen Time:</strong> Parents can restrict app downloads by age rating. With a 17+ rating, Albatross will be blocked on devices where Screen Time restricts apps to a lower age rating.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span><strong>Family Sharing:</strong> The Family Sharing organizer can enable "Ask to Buy" for children under 18, requiring parental approval before any app download or in-app purchase.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span><strong>Content &amp; Privacy Restrictions:</strong> Parents can disable in-app purchases entirely through iOS content restrictions.</span>
+      </div>
+    </div>
+
+    <h2>Why Albatross Is Not Gambling</h2>
+    <p>Albatross is a fantasy sports application, not a gambling or wagering app. Key distinctions:</p>
+    <div class="check-list">
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span><strong>Skill-based contests:</strong> Success requires knowledge of golf, player statistics, course analysis, and strategic decision-making — not chance.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span><strong>No house edge:</strong> Albatross does not take a percentage of winnings or operate a book. Revenue comes from pool creation fees and subscriptions.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span><strong>Private pools only:</strong> All contests are among known friends, not anonymous mass-market competitions.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span><strong>No odds-based wagering:</strong> While the app displays odds as informational data, users cannot place bets or wagers through the app.</span>
+      </div>
+      <div class="check-item">
+        <span class="check-icon">&#10003;</span>
+        <span><strong>Fixed entry structure:</strong> Pool entry terms are set by the commissioner before the pool begins — there are no variable stakes, progressive bets, or in-play wagering.</span>
+      </div>
+    </div>
+
+    <h2>Contact</h2>
+    <p>Questions about age suitability or content? Contact us at <a href="mailto:harrisondesimone@gmail.com">harrisondesimone@gmail.com</a></p>
+
+    <nav class="legal-nav">
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="eula.html">EULA</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">A</div>
+        <span class="footer-copy">&copy; 2026 Harrison DeSimone. All rights reserved.</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="eula.html">EULA</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="age-suitability.html">Age Suitability</a></li>
+        <li><a href="mailto:harrisondesimone@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
 </body>
 </html>
